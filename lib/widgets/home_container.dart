@@ -29,12 +29,15 @@ class HomeContainer extends StatelessWidget {
           ),
         ],
       ),
-      child: Center(
+      child: ListTile(
+        title: Image.asset("assets/icons/6.png",),
+        subtitle: Center(
         child: Text(
           titel,
-          style: TextStyle(color: Colors.black, fontSize: 18),
+          style: const TextStyle(color: Colors.black, fontSize: 18,fontFamily: 'cairo',fontWeight: FontWeight.bold),
         ),
       ),
+      )
     );
   }
 }

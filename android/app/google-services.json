@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "325843575673",
+    "project_id": "permie-marocain",
+    "storage_bucket": "permie-marocain.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:325843575673:android:74991093d83bed56dbc5a8",
+        "android_client_info": {
+          "package_name": "com.boukouchpermie.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUmXLfe0p7DdtRrmIf_kk47kq6DuzF-CE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:325843575673:android:d29760f0b4cf74b7dbc5a8",
+        "android_client_info": {
+          "package_name": "com.example.permis_marocain"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUmXLfe0p7DdtRrmIf_kk47kq6DuzF-CE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

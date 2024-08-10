@@ -17,11 +17,12 @@ class ImageContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: screenHeight * 0.26, // Adjust as needed
-      width: screenWidth * 0.45, 
-      margin: EdgeInsets.only(bottom: 10),// Adjust as needed
+      height: screenHeight * 0.4, // Adjust as needed
+      width: screenWidth * 0.47, 
+      margin: EdgeInsets.only(bottom: 10),
+      padding: EdgeInsets.only(bottom: 20),// Adjust as needed
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Color.fromARGB(172, 59, 56, 56),
         borderRadius: BorderRadius.circular(10),
         boxShadow: [
           BoxShadow(
@@ -34,8 +35,23 @@ class ImageContainer extends StatelessWidget {
       ),
       child: Center(
         child: ListTile(
-          title:Image.asset(file),
-          subtitle: Text(titel),
+          title:ClipRRect(
+            borderRadius: BorderRadius.circular(20), // Set the border radius here
+            child: Image.asset(
+              file,
+              fit: BoxFit.cover, // Adjust image fit if needed
+            ),
+          ),
+          subtitle: Text(
+          titel,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 15,
+            fontWeight: FontWeight.bold,
+            fontFamily: "cairo"
+          ),
+          ),
         ),
       )
     );
