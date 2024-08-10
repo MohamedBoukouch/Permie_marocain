@@ -28,66 +28,68 @@ class ResultatQuation extends StatelessWidget {
         backgroundColor: isCorrect==true?Colors.green:Colors.red,
         title: Text("السؤال $number_q"),
       ),
-      body: Column(
-        children: [
-          Image.asset(image),
-          Container(
-            padding: const EdgeInsets.only(right: 20, left: 15, top: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                const Icon(Icons.check, size: 40, color: Colors.green),
-                // First Row: Correct Answers
-                for (int i = 0; i < 4; i++)
-                  ResultatQuationContainer(
-                    titel: (i + 1).toString(),
-                    color: correctAnswer.contains(i + 1)
-                        ? Colors.green
-                        : Colors.grey,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Image.asset(image),
+            Container(
+              padding: const EdgeInsets.only(right: 20, left: 15, top: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  const Icon(Icons.check, size: 40, color: Colors.green),
+                  // First Row: Correct Answers
+                  for (int i = 0; i < 4; i++)
+                    ResultatQuationContainer(
+                      titel: (i + 1).toString(),
+                      color: correctAnswer.contains(i + 1)
+                          ? Colors.green
+                          : Colors.grey,
+                    ),
+                ],
+              ),
+            ),
+            // Second Row: User Answers
+            Container(
+              padding: const EdgeInsets.only(right: 20, left: 15, top: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  const Icon(Icons.person, size: 40, color: Colors.orange),
+                  for (int i = 0; i < 4; i++)
+                    ResultatQuationContainer(
+                      titel: (i + 1).toString(),
+                      color: userAnswer.isEmpty
+                          ? Colors.grey
+                          : userAnswer.contains(i + 1)
+                              ? (correctAnswer.contains(i + 1) ? Colors.green : Colors.red)
+                              : Colors.grey,
+                    ),
+                ],
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.all(20),
+              height: AppConstantes.screenHeight * .2,
+              padding: const EdgeInsets.all(8),
+              width: AppConstantes.screenWidth,
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 41, 38, 38),
+                borderRadius: BorderRadius.circular(25),
+              ),
+              child:  Center(
+                child: Text(
+                  description,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                   ),
-              ],
-            ),
-          ),
-          // Second Row: User Answers
-          Container(
-            padding: const EdgeInsets.only(right: 20, left: 15, top: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                const Icon(Icons.person, size: 40, color: Colors.orange),
-                for (int i = 0; i < 4; i++)
-                  ResultatQuationContainer(
-                    titel: (i + 1).toString(),
-                    color: userAnswer.isEmpty
-                        ? Colors.grey
-                        : userAnswer.contains(i + 1)
-                            ? (correctAnswer.contains(i + 1) ? Colors.green : Colors.red)
-                            : Colors.grey,
-                  ),
-              ],
-            ),
-          ),
-          Container(
-            margin: const EdgeInsets.all(20),
-            height: AppConstantes.screenHeight * .2,
-            padding: const EdgeInsets.all(8),
-            width: AppConstantes.screenWidth,
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 41, 38, 38),
-              borderRadius: BorderRadius.circular(25),
-            ),
-            child:  Center(
-              child: Text(
-                description,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

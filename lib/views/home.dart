@@ -5,7 +5,8 @@ import 'package:permis_marocain/views/Exam_Final/exam_finale.dart';
 import 'package:permis_marocain/views/Narsa/narsa_home.dart';
 import 'package:permis_marocain/views/cours.dart';
 import 'package:permis_marocain/views/series/series_1.dart';
-import 'package:permis_marocain/widgets/home_container.dart';
+import 'package:permis_marocain/widgets/HomeContainer.dart';
+// import 'package:permis_marocain/widgets/home_container.dart';
 
 import '../Config/constantes.dart';
 

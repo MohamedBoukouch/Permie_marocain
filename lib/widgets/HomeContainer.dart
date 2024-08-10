@@ -30,7 +30,7 @@ class HomeContainer extends StatelessWidget {
         ],
       ),
       child: ListTile(
-        title: Image.asset("assets/icons/6.png",),
+        // title: Image.asset("assets/icons/6.png",),
         subtitle: Center(
         child: Text(
           titel,

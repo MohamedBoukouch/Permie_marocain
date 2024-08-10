@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:permis_marocain/Config/constantes.dart';
@@ -36,6 +37,12 @@ class _Series1State extends State<Series1> {
       print("Error fetching data: $e");
       return ['0', 0];
     }
+  }
+
+  Future<Map<String, dynamic>> fetchDataFromFirebase(String docId) async {
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+  DocumentSnapshot docSnapshot = await firestore.collection('your_collection').doc(docId).get();
+  return docSnapshot.data() as Map<String, dynamic>;
   }
 
   @override

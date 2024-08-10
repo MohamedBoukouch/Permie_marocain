@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:permis_marocain/widgets/home_container.dart';
+import 'package:permis_marocain/widgets/HomeContainer.dart';
 
 import '../Config/constantes.dart';
 import 'Cours/Route/route_home.dart';
